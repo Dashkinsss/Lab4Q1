@@ -1,0 +1,32 @@
+trigger:
+  - main
+
+pool:
+  name: Default
+
+variables:
+  buildConfiguration: 'Release'
+  packageOutput: '$(Build.ArtifactStagingDirectory)/packages'
+
+steps:
+  - task: UseDotNet@2
+    displayName: 'Install .NET 8 SDK'
+    inputs:
+      packageType: 'sdk'
+      version: '8.0.x'
+
+  - script: dotnet restore Lab4Q1.sln
+    displayName: 'Restore solution'
+
+  - script: dotnet build Lab4Q1.sln --configuration $(buildConfiguration) --no-restore
+    displayName: 'Build solution'
+
+  - script: dotnet pack StringExtensionsLib/StringExtensionsLib.csproj --configuration $(buildConfiguration) --output $(packageOutput)
+    displayName: 'Pack NuGet package'
+
+  - task: NuGetAuthenticate@1
+    displayName: 'Authenticate to Azure Artifacts'
+
+  - script: |
+      dotnet nuget push "$(packageOutput)/*.nupkg" --source "lab4feed" --skip-duplicate
+    displayName: 'Push package to Azure Artifacts'
