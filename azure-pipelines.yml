@@ -9,6 +9,9 @@ variables:
   packageOutput: '$(Build.ArtifactStagingDirectory)/packages'
 
 steps:
+  - checkout: self
+    displayName: 'Checkout repository'
+
   - task: UseDotNet@2
     displayName: 'Install .NET 8 SDK'
     inputs:
@@ -28,5 +31,16 @@ steps:
     displayName: 'Authenticate to Azure Artifacts'
 
   - script: |
-      dotnet nuget push "$(packageOutput)/*.nupkg" --source "lab4feed" --skip-duplicate
+      dotnet nuget remove source lab4feed || true
+
+      dotnet nuget add source "https://pkgs.dev.azure.com/divanov2/Lab4Q1/_packaging/lab4feed/nuget/v3/index.json" \
+        --name "lab4feed" \
+        --username "az" \
+        --password "$(System.AccessToken)" \
+        --store-password-in-clear-text
+
+      dotnet nuget push "$(packageOutput)/*.nupkg" \
+        --source "lab4feed" \
+        --api-key az \
+        --skip-duplicate
     displayName: 'Push package to Azure Artifacts'
