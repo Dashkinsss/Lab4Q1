@@ -1,0 +1,11 @@
+/Users/dasaivanova/Lab4Q1/StringExtensionsLib/bin/Release/net8.0/StringExtensionsLib.deps.json
+/Users/dasaivanova/Lab4Q1/StringExtensionsLib/bin/Release/net8.0/StringExtensionsLib.dll
+/Users/dasaivanova/Lab4Q1/StringExtensionsLib/bin/Release/net8.0/StringExtensionsLib.pdb
+/Users/dasaivanova/Lab4Q1/StringExtensionsLib/obj/Release/net8.0/StringExtensionsLib.GeneratedMSBuildEditorConfig.editorconfig
+/Users/dasaivanova/Lab4Q1/StringExtensionsLib/obj/Release/net8.0/StringExtensionsLib.AssemblyInfoInputs.cache
+/Users/dasaivanova/Lab4Q1/StringExtensionsLib/obj/Release/net8.0/StringExtensionsLib.AssemblyInfo.cs
+/Users/dasaivanova/Lab4Q1/StringExtensionsLib/obj/Release/net8.0/StringExtensionsLib.csproj.CoreCompileInputs.cache
+/Users/dasaivanova/Lab4Q1/StringExtensionsLib/obj/Release/net8.0/StringExtensionsLib.dll
+/Users/dasaivanova/Lab4Q1/StringExtensionsLib/obj/Release/net8.0/refint/StringExtensionsLib.dll
+/Users/dasaivanova/Lab4Q1/StringExtensionsLib/obj/Release/net8.0/StringExtensionsLib.pdb
+/Users/dasaivanova/Lab4Q1/StringExtensionsLib/obj/Release/net8.0/ref/StringExtensionsLib.dll
