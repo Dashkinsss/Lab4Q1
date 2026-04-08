@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
-    <PackageId>StringExtensionsLib</PackageId>
+    <PackageId>Dashkinsss.StringExtensionsLib</PackageId>
     <Version>1.0.0</Version>
     <Authors>Daria Ivanova</Authors>
     <Description>String extension library for checking if a string starts with an uppercase letter.</Description>
